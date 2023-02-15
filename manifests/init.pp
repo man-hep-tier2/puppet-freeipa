@@ -41,6 +41,9 @@
 # @param fixed_primary
 #   If true, on client it configure SSSD to use a fixed server as the primary IPA server.
 #   The default behavior of client is to use DNS SRV records to determine the primary server to use.
+# @force_join
+#   If true, use `--force-join` option to override the host entry on the server and force client enrollment.
+#   The default behavior is not to force an override.
 # @param idstart From the IPA man pages: "The starting user and group id number".
 # @param install_autofs If true, then the autofs packages are installed.
 # @param install_epel If true, then the epel repo is installed. The epel repo is usually required for sssd packages.
@@ -83,6 +86,7 @@ class freeipa (
   Boolean                              $enable_hostname                = true,
   Boolean                              $enable_ip_address              = false,
   Boolean                              $fixed_primary                  = false,
+  Boolean                              $force_join                     = false,
   Integer[10000]                       $idstart                        = 10000,
   Boolean                              $install_autofs                 = false,
   Boolean                              $install_epel                   = true,

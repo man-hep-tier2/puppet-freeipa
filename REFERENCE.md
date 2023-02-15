@@ -69,6 +69,7 @@ The following parameters are available in the `freeipa` class:
 * [`enable_hostname`](#enable_hostname)
 * [`enable_ip_address`](#enable_ip_address)
 * [`fixed_primary`](#fixed_primary)
+* [`force_join`](#force_join)
 * [`idstart`](#idstart)
 * [`install_autofs`](#install_autofs)
 * [`install_epel`](#install_epel)
@@ -196,6 +197,15 @@ Data type: `Boolean`
 
 If true, on client it configure SSSD to use a fixed server as the primary IPA server.
 The default behavior of client is to use DNS SRV records to determine the primary server to use.
+
+Default value: ``false``
+
+##### <a name="force_join"></a>`force_join`
+
+Data type: `Boolean`
+
+If true, then the client installer flag `--force-join` is populated and passed to `ipa-client-install`
+in order to override the host entry on the server and force client enrollment.
 
 Default value: ``false``
 
