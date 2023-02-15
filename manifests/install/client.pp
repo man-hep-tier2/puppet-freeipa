@@ -32,6 +32,12 @@ class freeipa::install::client {
       $client_install_cmd_opts_fixed_primary = ''
     }
 
+    if $freeipa::force_join {
+      $client_install_cmd_opts_force_join = '--force-join'
+    } else {
+      $client_install_cmd_opts_force_join = ''
+    }
+
     if $freeipa::configure_ntp {
       $client_install_cmd_opts_no_ntp = ''
     } else {
@@ -53,6 +59,7 @@ class freeipa::install::client {
     --password=\"\$PASSWORD_USEDTO_JOINDOMAIN\" \
     ${client_install_cmd_opts_mkhomedir} \
     ${client_install_cmd_opts_fixed_primary} \
+    ${client_install_cmd_opts_force_join} \
     ${client_install_cmd_opts_no_ntp} \
     ${client_install_cmd_opts_hostname} \
     --unattended"

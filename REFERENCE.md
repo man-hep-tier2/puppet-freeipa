@@ -71,6 +71,7 @@ The following parameters are available in the `freeipa` class:
 * [`enable_random_serial_numbers`](#-freeipa--enable_random_serial_numbers)
 * [`enable_zone_overlap`](#-freeipa--enable_zone_overlap)
 * [`fixed_primary`](#-freeipa--fixed_primary)
+* [`force_join`](#force_join)
 * [`idstart`](#-freeipa--idstart)
 * [`install_autofs`](#-freeipa--install_autofs)
 * [`install_epel`](#-freeipa--install_epel)
@@ -221,6 +222,15 @@ If true, on client it configure SSSD to use a fixed server as the primary IPA se
 The default behavior of client is to use DNS SRV records to determine the primary server to use.
 
 Default value: `false`
+
+##### <a name="force_join"></a>`force_join`
+
+Data type: `Boolean`
+
+If true, then the client installer flag `--force-join` is populated and passed to `ipa-client-install`
+in order to override the host entry on the server and force client enrollment.
+
+Default value: ``false``
 
 ##### <a name="-freeipa--idstart"></a>`idstart`
 
