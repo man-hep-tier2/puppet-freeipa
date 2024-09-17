@@ -232,6 +232,15 @@ in order to override the host entry on the server and force client enrollment.
 
 Default value: ``false``
 
+##### <a name="force_join"></a>`force_join`
+
+Data type: `Boolean`
+
+If true, then the client installer flag `--force-join` is populated and passed to `ipa-client-install`
+in order to override the host entry on the server and force client enrollment.
+
+Default value: ``false``
+
 ##### <a name="-freeipa--idstart"></a>`idstart`
 
 Data type: `Integer[10000]`
